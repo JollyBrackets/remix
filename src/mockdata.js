@@ -62,7 +62,7 @@ const muscleGroups = [
 ]
 
 const trainers =
-  ['caroline-girvan', 'chloe-ting', 'fit-for-fun', 'growingannanas', 'headspace', 'heather-robertson', 'les-mills', 'mady-morrison', 'my-life', 'pamela-reif', 'popsugar-fitness', 'tiff-x-dan']
+    ["Caroline Girvan", "Chloe Ting", "Fit for Fun", "Growing Annanas", "Headspace", "Heather Robertson", "Les Mills", "Mady Morrison", "My Life", "Pamela Reif", "Popsugar Fitness", "Tiff x Dan"]
 
 
 const durations = [1, 3, 5, 10, 15]
