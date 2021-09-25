@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app dark>
-      <div id="nav" class="static">
+      <div id="nav" class="static bg-black">
         <router-link to="/">Home</router-link>
         |
         <router-link to="/about">About</router-link>

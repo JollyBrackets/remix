@@ -122,7 +122,7 @@ export default {
       'HIT': 'hiit',
       'Body Balance': 'body-balance',
       'Stretch': 'stretch',
-      'Tai Chi': 'tai-chai',
+      'Tai Chi': 'tai-chi',
       'Meditation': 'meditation',
       'Warm Up': 'warm-up',
       'Cool Down': 'cool-down',
