@@ -23,6 +23,7 @@
               :class="small ? 'py-0' : 'py-4'"
               v-on="on"
               v-bind="attrs"
+              @click="part.jumpTo && jumpTo(part.jumpTo)"
             >
               {{ part.duration }}
             </v-sheet>
@@ -146,6 +147,14 @@ export default {
     heartbeat() {
       return Math.ceil(Math.random() * (120 - 80) + 80);
     },
+    jumpTo (to) {
+      const vid = document.querySelector('#demo-video')
+      if (vid) {
+        vid.pause()
+        vid.currentTime = to;
+        vid.play()
+      }
+    }
   },
   computed: {
     totalDuration() {

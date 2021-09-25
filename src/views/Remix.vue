@@ -33,7 +33,7 @@
       </v-row>
 
       <h1 class="mt-12 mb-2">Your Daily Recommended Mix</h1>
-      <MixTrack :intensity="intensity" :duration="duration" />
+      <MixTrack :intensity="intensity" :duration="duration" :category="category" />
     </v-container>
   </v-img>
 </template>
@@ -49,7 +49,14 @@ export default {
   components: { RoundSlider, MixTrack },
   data: () => ({
     duration: 30,
-    intensity: 5
+    intensity: 5,
+    category: null
   }),
+  mounted () {
+    const { duration, intensity, category } = this.$route.query
+    this.duration = duration ? parseInt(duration) : 30
+    this.intensity = intensity ? parseInt(intensity) : 5
+    this.category = category
+  }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <video v-if="url" controls>
+  <video id="demo-video" v-if="url" controls width="100%">
     <source :src="url" type="video/mp4" height="200" />
   </video>
 </template>
@@ -30,7 +30,7 @@ export default {
     url: null
   }),
   async created () {
-    this.url = await getDownloadURL(ref(storage, 'gs://remix-29f1f.appspot.com/5 cleansing breaths exercise (Headspace).mp4'))
+    this.url = await getDownloadURL(ref(storage, 'gs://remix-29f1f.appspot.com/demo-workout.mp4'))
     console.log(this.url)
   }
 
