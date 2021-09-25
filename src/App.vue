@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" class="v-application text-white bg-black">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/browse">Browse</router-link>
     </div>
     <router-view/>
   </div>
@@ -14,7 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
 }
 
 #nav {
@@ -22,7 +23,7 @@
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: white;
 
     &.router-link-exact-active {
       color: #42b983;
