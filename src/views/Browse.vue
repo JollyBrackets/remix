@@ -2,8 +2,7 @@
   <section class="h-full w-full bg-black flex px-20 py-20 flex-col">
     <BrowseRow :title="'Channels'" :hardSources="channelHardSources" :strings="channels" />
     <BrowseRow :title="'Categories'" :hardSources="categoriesHardSources" :strings="categories"/>
-
-    <h2 class="font-bold text-2xl text-left mb-4 ml-3">Muscle Groups</h2>
+    <BrowseRow :title="'Muscle Groups'" :hardSources="muscleGroupsHardSources" :strings="muscleGroups"/>
   </section>
 </template>
 
@@ -18,6 +17,8 @@ export default {
     channels: ["Caroline Girvan", "Chloe Ting", "Fit for Fun", "Growing Annanas", "Headspace", "Heather Robertson", "Les Mills", "Mady Morrison", "My Life", "Pamela Reif", "Popsugar Fitness", "Tiff x Dan"],
     categoriesHardSources: ["body-balance", "body-combat", "breathing", "cardio", "cool-down", "dance", "health-advice", "hiit", "meditation", "mindfullness", "pilates", "stretch", "warm-up", "yoga"],
     categories: ["Body Balance", "Body Combat", "Breathing", "Cardio", "Cool Down", "Dance", "Health Advice", "HIIT", "Meditation", "Mindfullness", "Pilates", "Stretch", "Warm Up", "Yoga"],
+    muscleGroupsHardSources: ["abs", "arms", "butt", "chest", "full-body", "legs", "lower-back", "neck", "shoulders"],
+    muscleGroups: ["Abs", "Arms", "Butt", "Chest", "Full Body", "Legs", "Lower Back", "Neck", "Shoulders"]
   }),
 
 }

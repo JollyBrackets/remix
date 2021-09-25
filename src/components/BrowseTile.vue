@@ -4,10 +4,12 @@
       <div class="h-full w-full bg-cover bg-center"
            :style="{ backgroundImage:`url(${require('../assets/'+imageSource+'.jpg')})` }">
       </div>
-      <div v-if="hover" id="channel-tile"
-           class="absolute inset-0 flex justify-center items-center bg-blue-violet-crayola bg-opacity-50 text-2xl font-extrabold cursor-pointer">
-        {{ channel }}
-      </div>
+      <router-link to="/coming-soon">
+        <div v-if="hover" id="channel-tile"
+             class="absolute inset-0 flex justify-center items-center bg-blue-violet-crayola bg-opacity-50 text-2xl font-extrabold cursor-pointer">
+          {{ channel }}
+        </div>
+      </router-link>
       <div class="absolute bottom-0 right-0 mb-2 mr-2 cursor-pointer" @click="like = !like">
         <v-icon v-if="like"
             color="#dc2626"
@@ -40,5 +42,9 @@ export default {
 </script>
 
 <style scoped>
+
+a {
+  color: white;
+}
 
 </style>

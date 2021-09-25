@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="mb-8">
     <h2 class="font-bold text-2xl text-left mb-4 ml-3">{{title}}</h2>
     <div class="flex flex-row flex-wrap items-center">
       <div v-for="(hardSource, index) of hardSources" :key="hardSource">
         <BrowseTile :imageSource="hardSource" :channel="strings[index]"/>
       </div>
-      <router-link to="/" class="text-md underline text-white w-48 my-20 ml-3">see all...</router-link>
+      <router-link to="/coming-soon" class="text-md underline text-white w-48 my-20 ml-3">see all...</router-link>
     </div>
   </div>
 </template>
