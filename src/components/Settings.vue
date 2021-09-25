@@ -127,24 +127,6 @@
               <v-list-item-title class="text-left">Feedback Hero</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn
-                text
-                @click="menu = false"
-            >
-              Cancel
-            </v-btn>
-            <v-btn
-                color="#815ac0ff"
-                text
-                @click="menu = false"
-            >
-              Save
-            </v-btn>
-          </v-card-actions>
       </v-card>
     </v-menu>
   </div>
