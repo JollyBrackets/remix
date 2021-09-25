@@ -5,9 +5,26 @@
            :style="{ backgroundImage:`url(${require('../assets/'+imageSource+'.jpg')})` }">
       </div>
       <div v-if="hover" id="channel-tile"
-           class=" absolute inset-0 flex justify-center items-center bg-green-400 bg-opacity-90 text-2xl font-extrabold">
+           class="absolute inset-0 flex justify-center items-center bg-blue-violet-crayola bg-opacity-50 text-2xl font-extrabold cursor-pointer">
         {{ channel }}
       </div>
+      <v-btn class="absolute bottom-0 right-0 mb-2 mr-2 cursor-pointer" @click="like = !like">
+        <v-icon v-if="like"
+            color="#dc2626"
+        >
+          mdi-heart
+        </v-icon>
+        <v-icon v-if="!like && hover"
+            color="#d2b7e5ff"
+        >
+          mdi-heart-outline
+        </v-icon>
+        <v-icon v-if="!(like || hover)"
+                color="#815ac0ff"
+        >
+          mdi-heart-outline
+        </v-icon>
+      </v-btn>
     </div>
   </v-hover>
 </template>

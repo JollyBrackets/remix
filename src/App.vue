@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="v-application text-white bg-black">
+  <div id="app" class="v-application text-white bg-black min-h-screen">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -26,7 +26,7 @@
     color: white;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #815ac0ff;
     }
   }
 }
