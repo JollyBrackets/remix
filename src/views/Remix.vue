@@ -52,7 +52,7 @@
                 class="white--text align-end"
                 height="200px"
                 width="400px"
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                :src="require(`../assets/${categoryImages[part.category]||'hiit'}.jpg`)"
               >
                <!-- <v-sparkline
                 :key="String(avg)"
@@ -68,14 +68,15 @@
               <v-list class="transparent">
                 <v-list-item>
                   <v-list-item-avatar>
-                    <img src="https://cdn.vuetifyjs.com/images/john.jpg" />
+                    <v-img
+                        :src="require(`../assets/${channelImages[part.trainer]||'les-mills'}.jpg`)"
+                    />
                   </v-list-item-avatar>
 
                   <v-list-item-content class="text-left">
                     <v-list-item-title>{{ part.trainer }}</v-list-item-title>
                     <v-list-item-title>{{ part.duration }} min</v-list-item-title>
                   </v-list-item-content>
-
                   <v-list-item-action>
                     <v-btn icon>
                       <v-icon>mdi-heart</v-icon>
@@ -114,6 +115,39 @@ export default {
   data: () => ({
     duration: 30,
     intensity: 5,
+
+    categoryImages: {
+      'Breathing': 'breathing',
+      'Yoga': 'yoga',
+      'HIT': 'hiit',
+      'Body Balance': 'body-balance',
+      'Stretch': 'stretch',
+      'Tai Chi': 'tai-chai',
+      'Meditation': 'meditation',
+      'Warm Up': 'warm-up',
+      'Cool Down': 'cool-down',
+      'Body Combat': 'body-combat',
+      'Dance': 'dance',
+      'Pilates': 'pilates',
+      'Health Advice': 'health-advice',
+      'Mindfulness': 'mindfullness',
+      'Cardio': 'cardio',
+    },
+
+    channelImages: {
+      'Caroline Girvan': 'caroline-girvan',
+      'Chloe Ting': 'chloe-ting',
+      'Fit for Fun': 'fit-for-fun',
+      'Growing Annanas': 'growingannanas',
+      'Headspace': 'headspace',
+      'Heather Robertson': 'heather-robertson',
+      'Les Mills': 'les-mills',
+      'Mady Morrison': 'mady-morrison',
+      'My Life': 'my-life',
+      'Pamela Reif': 'pamela-reif',
+      'Popsugar Fitness': 'popsugar-fitness',
+      'Tiff x Dan': 'tiff-x-dan',
+    }
   }),
   computed: {
     totalDuration () {
