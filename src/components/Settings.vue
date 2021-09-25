@@ -67,7 +67,7 @@
                   color="#815ac0ff"
               ></v-switch>
             </v-list-item-action>
-            <v-list-item-title class="text-left">Enable Gamin Tracking</v-list-item-title>
+            <v-list-item-title class="text-left">Enable Garmin Tracking</v-list-item-title>
           </v-list-item>
         </v-list>
 

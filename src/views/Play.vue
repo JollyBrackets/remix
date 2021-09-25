@@ -91,16 +91,16 @@
             <v-icon size="32" color="#d2b7e5ff" class="mr-5">mdi-share</v-icon>
             Share the love
           </p>
-          <v-btn icon x-large>
+          <v-btn icon x-large @click="$router.push('/coming-soon')">
             <v-icon>mdi-facebook</v-icon>
           </v-btn>
-          <v-btn icon x-large>
+          <v-btn icon x-large @click="$router.push('/coming-soon')">
             <v-icon>mdi-whatsapp</v-icon>
           </v-btn>
-          <v-btn icon x-large>
+          <v-btn icon x-large @click="$router.push('/coming-soon')">
             <v-icon>mdi-instagram</v-icon>
           </v-btn>
-          <v-btn icon x-large>
+          <v-btn icon x-large @click="$router.push('/coming-soon')">
             <v-icon>mdi-email</v-icon>
           </v-btn>
         </v-col>
