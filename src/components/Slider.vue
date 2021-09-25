@@ -9,7 +9,7 @@
           ></round-slider>
     </div>
 
-    <div class="tw-inline">  <h3 class="tw-inline">{{ name }}: </h3>{{ sliderValue }}</div>
+    <div class="inline">  <h3 class="inline">{{ name }}: </h3>{{ sliderValue }}</div>
   </div>
 </template>
 

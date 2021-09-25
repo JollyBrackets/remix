@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="v-application">
+  <div id="app" class="v-application min-h-screen bg-black text-white">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -38,7 +38,7 @@ console.log(mockdata.generateData(100))
 
 export default {
   data: () => ({
-    
-  }) 
+
+  })
 }
 </script>

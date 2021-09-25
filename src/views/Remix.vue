@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="about tw-flex tw-w-full tw-flex-wrap tw-px-32">
+    <div class="about flex w-full flex-wrap px-32">
 
-      <slider class="tw-w-1/3" name="Desired Training Length"/>
-      <slider class="tw-w-1/3 tw-ml-auto" name="Desired Training Intensity"/>
+      <slider class="w-1/3" name="Desired Training Length"/>
+      <slider class="w-1/3 ml-auto" name="Desired Training Intensity"/>
 
     </div>
     <div class="about">
       <v-card
           flat
           color="transparent"
-          class="tw-w-full"
+          class="w-full"
       >
         <div id="chart">
           <h1>Your Daily Recommended Mix:</h1>

@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-flex-wrap">
+  <div class="flex flex-wrap">
     <v-chip
         v-if="chip1"
         class="ma-2"
