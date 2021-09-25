@@ -8,7 +8,7 @@
            class="absolute inset-0 flex justify-center items-center bg-blue-violet-crayola bg-opacity-50 text-2xl font-extrabold cursor-pointer">
         {{ channel }}
       </div>
-      <v-btn class="absolute bottom-0 right-0 mb-2 mr-2 cursor-pointer" @click="like = !like">
+      <div class="absolute bottom-0 right-0 mb-2 mr-2 cursor-pointer" @click="like = !like">
         <v-icon v-if="like"
             color="#dc2626"
         >
@@ -24,7 +24,7 @@
         >
           mdi-heart-outline
         </v-icon>
-      </v-btn>
+      </div>
     </div>
   </v-hover>
 </template>
