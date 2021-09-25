@@ -19,7 +19,8 @@
             <v-sheet
               v-ripple
               :color="part.color"
-              class="tile py-5 mr-1"
+              class="tile mr-1"
+              :class="small ? 'py-0' : 'py-4'"
               v-on="on"
               v-bind="attrs"
             >
@@ -90,6 +91,10 @@ import mockdata from "@/mockdata";
 export default {
   name: 'mix-track',
   props: {
+    small: {
+      type: Boolean,
+      default: false
+    },
     intensity: {
       type: Number,
       default: 5
