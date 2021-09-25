@@ -1,15 +1,21 @@
 <template>
-  <v-app dark>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/browse">Browse</router-link> |
-      <router-link to="/remix"> Remix</router-link>
-    </div>
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
+  <div>
+    <v-app dark>
+      <div id="nav" class="static">
+        <router-link to="/">Home</router-link>
+        |
+        <router-link to="/about">About</router-link>
+        |
+        <router-link to="/browse">Browse</router-link>
+        |
+        <router-link to="/remix"> Remix</router-link>
+        <Settings></Settings>
+      </div>
+      <v-main>
+        <router-view/>
+      </v-main>
+    </v-app>
+  </div>
 </template>
 
 <style lang="scss">
@@ -22,7 +28,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 60px;
 
   a {
     font-weight: bold;
@@ -34,3 +40,10 @@
   }
 }
 </style>
+<script>
+
+import Settings from "./components/Settings";
+export default {
+  components: {Settings}
+}
+</script>
