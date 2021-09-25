@@ -37,7 +37,10 @@ export default {
   props: {
     imageSource: {type: String, required: true},
     channel: {type: String, required: true},
-  }
+  },
+  data: () => ({
+    like: false
+  })
 }
 </script>
 

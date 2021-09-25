@@ -1,7 +1,7 @@
 <template>
   <v-row no-gutters align="center" justify="center">
     <v-col
-      v-for="(part, i) in mix"
+      v-for="(part, i) in (mix || generatedMix)"
       :key="i"
       style="position: relative"
       :style="'min-width: ' + (part.duration / totalDuration) * 100 + '%'"
@@ -91,6 +91,10 @@ import mockdata from "@/mockdata";
 export default {
   name: 'mix-track',
   props: {
+    mix: {
+      type: Array,
+      default: null
+    },
     small: {
       type: Boolean,
       default: false
@@ -102,7 +106,7 @@ export default {
     duration: {
       type: Number,
       default: 30
-    }
+    },
   },
   data: () => ({
     categoryImages: {
@@ -147,7 +151,7 @@ export default {
     totalDuration() {
       return this.mix.reduce((total, part) => total + part.duration, 0);
     },
-    mix() {
+    generatedMix() {
       const mix = mockdata.magicAlgo(this.intensity / 10, this.duration);
       return mix
     },
