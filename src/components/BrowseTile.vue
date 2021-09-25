@@ -7,7 +7,7 @@
       <router-link to="/coming-soon">
         <div v-if="hover" id="channel-tile"
              class="absolute inset-0 flex justify-center items-center bg-blue-violet-crayola bg-opacity-50 text-2xl font-extrabold cursor-pointer">
-          {{ channel }}
+          {{ tileString }}
         </div>
       </router-link>
       <div class="absolute bottom-0 right-0 mb-2 mr-2 cursor-pointer" @click="like = !like">
@@ -36,7 +36,7 @@ export default {
   name: "BrowseTile",
   props: {
     imageSource: {type: String, required: true},
-    channel: {type: String, required: true},
+    tileString: {type: String, required: true},
   },
   data: () => ({
     like: false
