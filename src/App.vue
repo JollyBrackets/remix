@@ -30,3 +30,14 @@
   }
 }
 </style>
+
+<script>
+import mockdata from './mockdata'
+console.log(mockdata.generateData(100))
+
+export default {
+  data: () => ({
+    
+  }) 
+}
+</script>
