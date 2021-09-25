@@ -1,5 +1,5 @@
 <template>
-  <section class="h-full w-full bg-black flex px-20 py-20 flex-col">
+  <section class="h-full w-full flex px-20 py-20 flex-col">
     <BrowseRow :title="'Channels'" :hardSources="channelHardSources" :strings="channels" />
     <BrowseRow :title="'Categories'" :hardSources="categoriesHardSources" :strings="categories"/>
     <BrowseRow :title="'Muscle Groups'" :hardSources="muscleGroupsHardSources" :strings="muscleGroups"/>

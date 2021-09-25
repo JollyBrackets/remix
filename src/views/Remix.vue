@@ -5,6 +5,7 @@
         <p>Desired Training Length</p>
         <round-slider
           v-model="duration"
+          class="mx-auto"
           step="5"
           pathColor="#dec9e9ff"
           rangeColor="#6247aaff"
@@ -14,6 +15,7 @@
         <p>Desired Training Intensity</p>
         <round-slider
           v-model="intensity"
+          class="mx-auto"
           step="10"
           pathColor="#dec9e9ff"
           rangeColor="#6247aaff"
@@ -28,10 +30,10 @@
           <v-menu
             :close-on-content-click="false"
             open-on-hover
-            center
-            offset-y
+            bottom
             max-width="400"
-            nudge-top="300"
+            nudge-bottom="100"
+            class="z-40"
           >
             <template v-slot:activator="{ on, attrs }">
               <v-hover v-slot="{ hover }">
@@ -53,23 +55,22 @@
                 height="200px"
                 width="400px"
                 :src="require(`../assets/${categoryImages[part.category]||'hiit'}.jpg`)"
+                gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
               >
-               <!-- <v-sparkline
-                :key="String(avg)"
+               <v-sparkline
                 :smooth="16"
                 :gradient="['#f72047', '#ffd200', '#1feaea']"
                 :line-width="3"
                 :value="heartbeats"
                 auto-draw
                 stroke-linecap="round"
-              ></v-sparkline> -->
-              <p class="text-h3">{{ part.category }}</p>
-              <p>{{ part.intensity }}</p>
+              ></v-sparkline>
+              <!-- <p class="text-h3">{{ part.category }}</p> -->
               <v-list class="transparent">
                 <v-list-item>
                   <v-list-item-avatar>
                     <v-img
-                        :src="require(`../assets/${channelImages[part.trainer]||'les-mills'}.jpg`)"
+                      :src="require(`../assets/${channelImages[part.trainer]||'les-mills'}.jpg`)"
                     />
                   </v-list-item-avatar>
 
@@ -79,7 +80,7 @@
                   </v-list-item-content>
                   <v-list-item-action>
                     <v-btn icon>
-                      <v-icon>mdi-heart</v-icon>
+                      <v-icon color="#815ac0ff">mdi-heart-outline</v-icon>
                     </v-btn>
                   </v-list-item-action>
                 </v-list-item>
@@ -90,10 +91,7 @@
               <v-divider></v-divider>
 
               <v-card-actions>
-                <v-spacer></v-spacer>
-
-                <v-btn text> remove </v-btn>
-                <v-btn color="primary" text> swap </v-btn>
+                {{ part.category }}
               </v-card-actions>
             </v-card>
           </v-menu>
@@ -115,7 +113,7 @@ export default {
   data: () => ({
     duration: 30,
     intensity: 5,
-
+  
     categoryImages: {
       'Breathing': 'breathing',
       'Yoga': 'yoga',
@@ -149,12 +147,20 @@ export default {
       'Tiff x Dan': 'tiff-x-dan',
     }
   }),
+  methods: {
+    heartbeat () {
+      return Math.ceil(Math.random() * (120 - 80) + 80)
+    }
+  },
   computed: {
     totalDuration () {
       return this.mix.reduce((total, part) =>  total + part.duration,0)
     },
     mix () {
       return mockdata.magicAlgo(this.intensity / 10, this.duration)
+    },
+    heartbeats () {
+      return Array.from({ length: 50 }, this.heartbeat)
     }
   },
 };
