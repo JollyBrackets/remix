@@ -15,6 +15,19 @@ const categories = [
   'Cardio',
 ]
 
+const intensityColors = {
+  0: '#dec9e9ff',
+  1: '#dac3e8ff',
+  2: '#d2b7e5ff',
+  3: '#c19ee0ff',
+  4: '#b185dbff',
+  5: '#a06cd5ff',
+  6: '#9163cbff',
+  7: '#815ac0ff',
+  8: '#7251b5ff',
+  9: '#6247aaff',
+}
+
 const defaultIntensities = {
   'Breathing': 0,
   'Yoga': 2,
@@ -57,13 +70,16 @@ function pickRandom(array) {
 function generateData (numberOfItems) {
   const data = []
   for (let i = 0; i < numberOfItems; i++) {
+    const category = pickRandom(categories)
+    const intensity = defaultIntensities[category]
     data.push({
-      category: pickRandom(categories),
+      category,
       muscleGroups: [pickRandom(muscleGroups), pickRandom(muscleGroups)],
       duration: pickRandom(durations),
       trainer: pickRandom(trainers),
       hearRateProfile: 0,
-      intensity: defaultIntensities[this.category]
+      intensity,
+      color: intensityColors[intensity]
     })
   }
   return data
@@ -74,5 +90,6 @@ export default {
   categories,
   muscleGroups,
   durations,
+  intensityColors,
   generateData
 }

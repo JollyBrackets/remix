@@ -3,7 +3,7 @@
     <div class="box">
       <round-slider
           v-model="sliderValue"
-          step="5"
+          :step="step"
           pathColor="#dec9e9ff"
           rangeColor="#6247aaff"
           ></round-slider>
@@ -28,6 +28,7 @@ export default {
   },
   props: {
     name: {type: String, required: true},
+    step: { type: Number, default: 5 }
   }
 };
 </script>
