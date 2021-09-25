@@ -38,6 +38,9 @@ export default {
     imageSource: {type: String, required: true},
     tileString: {type: String, required: true},
   },
+  data: () => ({
+    like: false
+  })
 }
 </script>
 
