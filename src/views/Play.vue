@@ -16,6 +16,15 @@
 
     <v-row class="mt-7">
       <v-col offset="3" cols="6">
+        <p><v-icon>mdi-thumbs-up</v-icon></p>
+        <p class="text-h1" style="color: #d2b7e5ff">
+          GREAT JOB!
+        </p>
+      </v-col>
+    </v-row>
+
+    <v-row class="mt-7">
+      <v-col offset="3" cols="6">
         <p class="text-h5" style="color: #d2b7e5ff">
           <v-icon size="32" color="#d2b7e5ff" class="mr-5">mdi-heart-pulse</v-icon>
           <span>Your heart rate</span>
@@ -33,6 +42,32 @@
      <v-row class="mt-7">
       <v-col offset="3" cols="6">
         <p class="text-h5" style="color: #d2b7e5ff">
+          <v-icon size="32" color="#d2b7e5ff" class="mr-5">mdi-fire</v-icon>
+          <span>Calories burned</span>
+        </p>
+        <p class="text-h1">
+          <span>89cal</span>
+          <span class="text-h3 green--text"> +242% </span>
+        </p>
+      </v-col>
+    </v-row>
+    <v-row class="mt-7">
+      <v-col offset="3" cols="6">
+        <p class="text-h5" style="color: #d2b7e5ff">
+          <v-icon size="32" color="#d2b7e5ff" class="mr-5">mdi-meditation</v-icon>
+          <span>Calm time</span>
+        </p>
+        <p class="text-h1">
+          <span>16 min</span>
+        </p>
+          <p class="text-h5 green--text"> 71% weekly goal</p>
+
+      </v-col>
+    </v-row>
+     <v-row class="mt-7">
+      <v-col offset="3" cols="6">
+        <p class="text-h5" style="color: #d2b7e5ff">
+          <v-icon size="32" color="#d2b7e5ff" class="mr-5">mdi-heart</v-icon>
           Rate this Remix
         </p>
         <v-rating
@@ -43,11 +78,25 @@
         ></v-rating>
       </v-col>
     </v-row>
+
      <v-row class="mt-7">
       <v-col offset="3" cols="6">
         <p class="text-h5" style="color: #d2b7e5ff">
-          
+          <v-icon size="32" color="#d2b7e5ff" class="mr-5">mdi-share</v-icon>
+          Share the love
         </p>
+        <v-btn icon>
+          <v-icon>mdi-facebook</v-icon>
+          </v-btn>
+        <v-btn icon>
+          <v-icon>mdi-whatsapp</v-icon>
+          </v-btn>
+        <v-btn icon>
+          <v-icon>mdi-instagram</v-icon>
+          </v-btn>
+        <v-btn icon>
+          <v-icon>mdi-email</v-icon>
+          </v-btn>
       </v-col>
     </v-row>
   </v-container>

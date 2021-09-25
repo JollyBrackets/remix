@@ -1,18 +1,21 @@
 <template>
   <div>
     <v-app dark>
-      <div id="nav" class="static">
-        <router-link to="/">Home</router-link>
-        |
-        <router-link to="/about">About</router-link>
-        |
-        <router-link to="/browse">Browse</router-link>
-        |
-        <router-link to="/remix"> Remix</router-link>
-        |
-        <router-link to="/play"> Play</router-link>
-        <Settings></Settings>
-      </div>
+      <v-row class="pt-4">
+        <v-col class="text-left text-lg font-bold pl-7">
+          <span class="text-blue-violet-crayola">Spotifit</span> - Remix your workout
+        </v-col>
+        <v-col id="nav">
+          <router-link to="/browse">Browse</router-link>
+          |
+          <router-link to="/remix"> Remix</router-link>
+          |
+          <router-link to="/play"> Play</router-link>
+        </v-col>
+        <v-col>
+          <Settings></Settings>
+        </v-col>
+      </v-row>
       <v-main>
         <router-view/>
       </v-main>
@@ -30,8 +33,6 @@
 }
 
 #nav {
-  padding: 20px;
-
   a {
     font-weight: bold;
     color: white;

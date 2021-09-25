@@ -2,7 +2,10 @@
   <v-img :src="require(`@/assets/mixtape.svg`)" width="1200px" class="mx-auto">
     <v-container class="w-4/6 h-full" style="padding-top: 120px">
       <v-row style="margin-bottom: 150px">
-        <v-btn color="#6247aaff" x-large bottom class="mx-auto" @click="$router.push('play')">Let's go</v-btn>
+        <v-btn color="#6247aaff" x-large bottom class="mx-auto" @click="$router.push('play')">
+          Start your mix
+          <v-icon class="pl-4">mdi-play-circle-outline</v-icon>
+        </v-btn>
       </v-row>
       <v-row>
         <v-col>
@@ -29,7 +32,7 @@
         </v-col>
       </v-row>
 
-      <h1 class="mt-12 mb-2">Your Daily Recommended Mix - {{ totalDuration }} min</h1>
+      <h1 class="mt-12 mb-2">Your Daily Recommended Mix</h1>
       <MixTrack :intensity="intensity" :duration="duration" />
     </v-container>
   </v-img>

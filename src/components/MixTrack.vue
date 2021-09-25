@@ -9,23 +9,23 @@
       <v-menu
         :close-on-content-click="false"
         open-on-hover
-        bottom
+        top
+        offset-y
         max-width="400"
-        nudge-bottom="100"
         class="z-40"
       >
         <template v-slot:activator="{ on, attrs }">
-          <v-hover v-slot="{ hover }">
+          <!-- <v-hover v-slot="{ hover }"> -->
             <v-sheet
+              v-ripple
               :color="part.color"
               class="tile py-5 mr-1"
-              :class="{ 'py-6': hover }"
               v-on="on"
               v-bind="attrs"
             >
               {{ part.duration }}
             </v-sheet>
-          </v-hover>
+          <!-- </v-hover> -->
         </template>
 
         <v-card>
@@ -143,7 +143,8 @@ export default {
       return this.mix.reduce((total, part) => total + part.duration, 0);
     },
     mix() {
-      return mockdata.magicAlgo(this.intensity / 10, this.duration);
+      const mix = mockdata.magicAlgo(this.intensity / 10, this.duration);
+      return mix
     },
     heartbeats() {
       return Array.from({ length: 50 }, this.heartbeat);
