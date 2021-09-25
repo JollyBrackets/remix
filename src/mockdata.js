@@ -105,8 +105,6 @@ function magicAlgo (totalItensity, totalDuration, preferredCategory, preferredMu
   }
   mix.push(warmUp)
 
-  console.log('Warm Up Part', warmUp)
-
   // coolDown
   const coolDownCategory = pickRandom(['Breathing', 'Meditation', 'Stretch'])
   const coolDownIntensity = defaultIntensities[coolDownCategory]
@@ -119,14 +117,11 @@ function magicAlgo (totalItensity, totalDuration, preferredCategory, preferredMu
     color: intensityColors[coolDownIntensity]
   }
 
-  console.log('Warm Up Part', coolDown)
-
   // Figure out the parts to generate
   let remainingDuration = totalDuration - warmUp.duration - coolDown.duration
   const sequence = [5, 10, 1, 15, 3, 10, 5, 15, 1, 5, 10, 1, 15, 3, 10, 5, 15, 1].slice(0, Math.floor(remainingDuration/8) - 1)
 
   if (sum(sequence) > remainingDuration + 3) {
-    console.log(sequence)
     sequence.sort(-1)
     sequence.pop()
   } else if (sum(sequence) < remainingDuration - 3) {
@@ -166,7 +161,6 @@ function magicAlgo (totalItensity, totalDuration, preferredCategory, preferredMu
   }
 
   mix.push(coolDown)
-  console.log(mix)
   return mix
 }
 

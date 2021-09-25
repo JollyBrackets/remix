@@ -9,6 +9,8 @@
         <router-link to="/browse">Browse</router-link>
         |
         <router-link to="/remix"> Remix</router-link>
+        |
+        <router-link to="/play"> Play</router-link>
         <Settings></Settings>
       </div>
       <v-main>
