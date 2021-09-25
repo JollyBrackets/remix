@@ -1,8 +1,24 @@
 <template>
   <v-container>
     <v-row>
-      <slider class="w-1/3" name="Desired Training Length" />
-      <slider :step="10" class="w-1/3 ml-auto" name="Desired Training Intensity" />
+      <v-col>
+        <p>Desired Training Length</p>
+        <round-slider
+          v-model="duration"
+          step="5"
+          pathColor="#dec9e9ff"
+          rangeColor="#6247aaff"
+        />
+      </v-col>
+      <v-col>
+        <p>Desired Training Intensity</p>
+        <round-slider
+          v-model="intensity"
+          step="10"
+          pathColor="#dec9e9ff"
+          rangeColor="#6247aaff"
+        />
+      </v-col>
     </v-row>
 
     <v-container>
@@ -26,6 +42,7 @@
                   v-on="on"
                   v-bind="attrs"
                 >
+                {{ part.duration }}
                 </v-sheet>
               </v-hover>
             </template>
@@ -46,6 +63,8 @@
                 auto-draw
                 stroke-linecap="round"
               ></v-sparkline> -->
+              <p class="text-h3">{{ part.category }}</p>
+              <p>{{ part.intensity }}</p>
               <v-list class="transparent">
                 <v-list-item>
                   <v-list-item-avatar>
@@ -86,23 +105,22 @@
 
 <script>
 // import Chips from "../components/Chips";
-import Slider from "../components/Slider.vue";
 import mockdata from "@/mockdata";
+import RoundSlider from "vue-round-slider";
 
 export default {
   name: "Remix",
-  components: { Slider },
+  components: { RoundSlider },
   data: () => ({
-    power: 78,
-    ex3: { label: "thumb-color", val: 50, color: "dark green" },
-    min: 5,
-    max: 120,
-    s: 40,
-    mix: mockdata.generateData(5),
+    duration: 30,
+    intensity: 5,
   }),
   computed: {
     totalDuration () {
       return this.mix.reduce((total, part) =>  total + part.duration,0)
+    },
+    mix () {
+      return mockdata.magicAlgo(this.intensity / 10, this.duration)
     }
   },
 };
