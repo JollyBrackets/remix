@@ -44,9 +44,9 @@
           >
             <v-sparkline
               :smooth="16"
-              :gradient="['#f72047', '#ffd200', '#1feaea']"
+              :gradient="part.intensity < 4 ? ['#ffd200', '#1feaea'] : part.intensity > 7 ?  ['#f72047', '#ffd200'] : ['#f72047', '#ffd200', '#1feaea']"
               :line-width="3"
-              :value="heartbeats"
+              :value="getHeartBeats(part.intensity)"
               auto-draw
               stroke-linecap="round"
             ></v-sparkline>
@@ -154,6 +154,17 @@ export default {
         vid.currentTime = to;
         vid.play()
       }
+    },
+    getHeartBeats (intensity) {
+      if (intensity < 3) {
+        return [69, 70, 70, 70, 70, 68, 68, 68, 68, 79, 79, 79, 79, 71, 71, 71, 71, 74, 74, 74, 74, 79, 79, 79, 79, 77, 77, 77, 77, 78, 78, 78, 78, 72, 72, 72, 72, 72, 72, 72]
+      } else if (intensity < 6) {
+        return [90, 90, 90, 103, 103, 103, 103, 102, 102, 102, 102, 100, 100, 100, 100, 104, 104, 104, 104, 101, 101, 101, 101, 101, 101, 101, 101, 109, 109, 109, 109, 102, 102, 102, 102, 86, 86, 86, 86, 83]
+      } else if (intensity < 10) {
+        return [160, 160, 160, 166, 166, 166, 166, 166, 166, 166, 166, 161, 161, 161, 161, 155, 155, 155, 155, 153, 153, 153, 153, 156, 156, 156, 156, 160, 160, 160, 160, 161, 161, 161, 161, 161, 161, 161, 161, 160]
+      } else {
+        return this.heartbeats
+      }
     }
   },
   computed: {
@@ -169,7 +180,7 @@ export default {
     },
     heartbeats() {
       return Array.from({ length: 50 }, this.heartbeat);
-    }
+    },
   }
 }
 </script>
