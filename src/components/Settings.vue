@@ -17,10 +17,10 @@
             class="absolute top-2 right-2 h-6 w-26"
         >
           <img
-            src="http://avataaars.io"
-            alt="John"
-            class="w-6"
-        >
+              src="http://avataaars.io"
+              alt="John"
+              class="w-6"
+          >
           LexHeggli
         </v-btn>
 
@@ -38,8 +38,9 @@
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title class="text-left" style="color: #815ac0ff; font-weight:bold">Elexa Heggli</v-list-item-title>
-              <v-list-item-subtitle class="text-left" >Keep going strong!</v-list-item-subtitle>
+              <v-list-item-title class="text-left" style="color: #815ac0ff; font-weight:bold">Elexa Heggli
+              </v-list-item-title>
+              <v-list-item-subtitle class="text-left">Keep going strong!</v-list-item-subtitle>
             </v-list-item-content>
 
 
@@ -47,28 +48,41 @@
         </v-list>
 
         <v-divider class="mb-2"></v-divider>
+
         <v-header style="color: #815ac0ff; font-weight:bold">Make it personal</v-header>
 
-        <v-list>
-          <v-list-item>
-            <v-list-item-action>
-              <v-switch
-                  v-model="message"
-                  color="#815ac0ff"
-              ></v-switch>
-            </v-list-item-action>
-            <v-list-item-title class="text-left">Do you have weights?</v-list-item-title>
-          </v-list-item>
+        <v-checkbox
+            label="Dumb bells"
+            hide-details
+            v-model="message"
+            color="#815ac0ff"
+            class="mb-2 ml-4"
+        />
+        <v-checkbox
+          label="Jump rope"
+          hide-details
+          v-model="menu"
+          color="#815ac0ff"
+          class="mb-2 ml-4"
+        />
+        <v-checkbox
+            label="Yoga Blocks"
+            hide-details
+            v-model="fav"
+            color="#815ac0ff"
+            class="ml-4 mb-2"
+        />
 
-          <v-list-item>
-            <v-list-item-action>
-              <v-switch
-                  v-model="hints"
-                  color="#815ac0ff"
-              ></v-switch>
-            </v-list-item-action>
-            <v-list-item-title class="text-left">Enable Garmin Tracking</v-list-item-title>
-          </v-list-item>
+        <v-list>
+        <v-list-item>
+          <v-list-item-action>
+            <v-switch
+                v-model="hints"
+                color="#815ac0ff"
+            ></v-switch>
+          </v-list-item-action>
+          <v-list-item-title class="text-left">Enable Garmin Tracking</v-list-item-title>
+        </v-list-item>
         </v-list>
 
         <v-divider class="mb-2"></v-divider>
@@ -102,31 +116,31 @@
 
         </v-list-item>
         <v-list-item>
-            <v-list-item-avatar color="grey darken-3">
-              <v-img
-                  class="elevation-6"
-                  alt=""
-                  :src="require('../assets/rock.png')"
-              ></v-img>
-            </v-list-item-avatar>
+          <v-list-item-avatar color="grey darken-3">
+            <v-img
+                class="elevation-6"
+                alt=""
+                :src="require('../assets/rock.png')"
+            ></v-img>
+          </v-list-item-avatar>
 
-            <v-list-item-content>
-              <v-list-item-title class="text-left">HIIT Star</v-list-item-title>
-            </v-list-item-content>
+          <v-list-item-content>
+            <v-list-item-title class="text-left">HIIT Star</v-list-item-title>
+          </v-list-item-content>
         </v-list-item>
         <v-list-item>
-            <v-list-item-avatar color="grey darken-3">
-              <v-img
-                  class="elevation-6"
-                  alt=""
-                  :src="require('../assets/feedback.png')"
-              ></v-img>
-            </v-list-item-avatar>
+          <v-list-item-avatar color="grey darken-3">
+            <v-img
+                class="elevation-6"
+                alt=""
+                :src="require('../assets/feedback.png')"
+            ></v-img>
+          </v-list-item-avatar>
 
-            <v-list-item-content>
-              <v-list-item-title class="text-left">Feedback Hero</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="text-left">Feedback Hero</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-card>
     </v-menu>
   </div>
