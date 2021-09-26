@@ -3,7 +3,7 @@
     <v-app dark>
       <v-row class="pt-4">
         <v-col class="text-left text-lg font-bold pl-7">
-          <span class="text-blue-violet-crayola">Spotifit</span> - Remix your workout
+          <span class="text-blue-violet-crayola">SpotiFit</span> - Remix your workout
         </v-col>
         <v-col id="nav">
           <router-link to="/browse">Browse</router-link>
